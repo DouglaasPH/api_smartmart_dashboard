@@ -1,6 +1,6 @@
 -- CATEGORIES
 
-CREATE TABLE categories (
+CREATE TABLE IF NOT EXISTS categories (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) UNIQUE NOT NULL
 );
@@ -8,7 +8,7 @@ CREATE TABLE categories (
 
 -- PRODUCTS
 
-CREATE TABLE products (
+CREATE TABLE IF NOT EXISTS products (
     id SERIAL PRIMARY KEY,
     name VARCHAR(300) NOT NULL,
     description TEXT NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE products (
 
 -- SALES
 
-CREATE TABLE sales (
+CREATE TABLE IF NOT EXISTS sales (
     id SERIAL PRIMARY KEY,
     product_id INTEGER NOT NULL,
     quantity INTEGER NOT NULL,
