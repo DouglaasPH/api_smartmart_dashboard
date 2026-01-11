@@ -14,7 +14,7 @@ class ExportProductUseCase:
         all_products = self.repository.list()
 
         response = HttpResponse(content_type="text/csv")
-        response["Content-Disposition"] = 'attachment; filename="products.csv'
+        response["Content-Disposition"] = 'attachment; filename="products.csv"'
 
         writer = csv.writer(response)
 
