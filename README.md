@@ -40,20 +40,24 @@ api_smartmart_dashboard/
 │   │       │   ├───export_product.py
 │   │       │   ├───list_product.py
 │   │       │   └───upload_product.py
+│   │       │
 │   │       └───sale
 │   │           ├───export_sale.py
 │   │           ├───get_sale.py
 │   │           ├───list_sales.py
 │   │           └───update_sale.py
+│   │
 │   ├───domain
 │   │   ├───entities
 │   │   │   ├───category_entity.py
 │   │   │   ├───product_entity.py
 │   │   │   └───sale_entity.py
+│   │   │
 │   │   └───repositories
 │   │       ├───category_repository.py
 │   │       ├───product_repository.py
 │   │       └───sale_repository.py
+│   │
 │   └───infrastructure
 │       ├───__init__.py
 │       │
@@ -62,10 +66,12 @@ api_smartmart_dashboard/
 │       │   │   ├───categories_model.py
 │       │   │   ├───products_model.py
 │       │   │   └───sales_model.py
+│       │   │
 │       │   └───repositories
 │       │       ├───category_repository.py
 │       │       ├───product_repository.py
 │       │       └───sale_repository.py
+│       │
 │       └───django
 │           ├───urls.py
 │           │
@@ -73,25 +79,59 @@ api_smartmart_dashboard/
 │           │   ├───category_serializer.py
 │           │   ├───product_serializer.py
 │           │   └───sale_serializer.py
+│           │
 │           └───views
 │               ├───category
 │               │   └───category_view.py
+│               │
 │               ├───product
 │               │   ├───export_product_view.py
 │               │   ├───import_product_view.py
 │               │   └───product_view.py
+│               │
 │               └───sale
 │                   ├───export_sale_view.py
 │                   └───sale_view.py
+├───tests
+│   ├───application
+│   │   ├───category
+│   │   │   ├───test_create_category.py
+│   │   │   └───test_list_category.py
+│   │   │
+│   │   ├───product
+│   │   │   ├───test_create_product.py
+│   │   │   ├───test_export_product.py
+│   │   │   ├───test_list_product.py
+│   │   │   └───test_upload_product.py
+│   │   │
+│   │   └───sale
+│   │       ├───test_export_sale.py
+│   │       ├───test_get_sale.py
+│   │       ├───test_list_sale.py
+│   │       └───test_update_sale.py
+│   │
+│   └───domain
+│       ├───entities
+│       │   ├───test_category_entity.py
+│       │   ├───test_product_entity.py
+│       │   └───test_sale_entity.py
+│       │
+│       └───repositories
+│           ├───test_category_repository.py
+│           ├───test_product_repository.py
+│           └───test_sale_repository.py
+│
 ├───core
 │   ├───asgi.py
 │   ├───settings.py
 │   ├───urls.py
 │   ├───wsgi.py
 │   └───__init__.py
+│
 ├───docker
 │   └───postgres
 │       └───init.sql
+│
 ├───.env
 ├───.flake8
 ├───.gitignore
