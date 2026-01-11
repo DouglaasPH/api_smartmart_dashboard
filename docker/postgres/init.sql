@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS products (
     name VARCHAR(300) NOT NULL,
     description TEXT NOT NULL,
     price NUMERIC(10, 2) NOT NULL,
+    brand VARCHAR(100) NOT NULL,
     category_id INTEGER NOT NULL,
     CONSTRAINT dk_categories_products
         FOREIGN KEY (category_id)
