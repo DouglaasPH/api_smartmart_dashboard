@@ -1,6 +1,7 @@
-from api.domain.entities.product_entity import Product
-from api.domain.entities.category_entity import Category
 from api.application.use_cases.product.create_product import CreateProductUseCase
+from api.domain.entities.category_entity import Category
+from api.domain.entities.product_entity import Product
+
 
 class FakeProductRepository:
     def __init__(self):
@@ -33,7 +34,7 @@ def test_create_product_usecase():
         description="Celular topo de linha",
         price=299.99,
         category_id=1,
-        brand="Apple"
+        brand="Apple",
     )
 
     assert product.name == "iPhone 14"

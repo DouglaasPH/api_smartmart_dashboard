@@ -3,12 +3,14 @@ import io
 
 from api.domain.entities.sale_entity import Sale
 
+
 class FakeSaleRepository:
     def list(self):
         return [
             Sale(id=1, product_id=10, date="2026-01-11", quantity=2, total_price=100.0),
             Sale(id=2, product_id=11, date="2026-01-12", quantity=1, total_price=50.0),
         ]
+
 
 def test_export_sales_usecase():
     repo = FakeSaleRepository()
@@ -21,7 +23,9 @@ def test_export_sales_usecase():
 
     # Dados
     for sale in repo.list():
-        writer.writerow([sale.id, sale.product_id, sale.date, sale.quantity, sale.total_price])
+        writer.writerow(
+            [sale.id, sale.product_id, sale.date, sale.quantity, sale.total_price]
+        )
 
     output.seek(0)
     content = output.read()

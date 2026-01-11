@@ -1,5 +1,6 @@
-from api.domain.entities.category_entity import Category
 from api.application.use_cases.category.create_category import CreateCategoryUseCase
+from api.domain.entities.category_entity import Category
+
 
 class FakeCategoryRepository:
     def __init__(self):

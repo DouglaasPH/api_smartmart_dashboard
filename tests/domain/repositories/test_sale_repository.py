@@ -15,11 +15,13 @@ class FakeSaleRepository(SaleRepository):
 
 def test_sale_repository_interface_methods_exists():
     repo = FakeSaleRepository()
-    
+
     sale = repo.get_by_id(1)
     assert sale is None
 
-    s = Sale(id=None, product_id=1, quantity=32, total_price=30943299.99, date="2025-05-24")
+    s = Sale(
+        id=None, product_id=1, quantity=32, total_price=30943299.99, date="2025-05-24"
+    )
     saved_sale = repo.save(s)
     assert saved_sale.date == "2025-05-24"
 

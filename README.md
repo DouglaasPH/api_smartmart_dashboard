@@ -275,3 +275,9 @@ http://localhost:5432
 ```bash
 docker exec -it smartmart_db psql -U root_smartmart smartmart
 ```
+
+### Rodar testes:
+
+```bash
+pytest
+```

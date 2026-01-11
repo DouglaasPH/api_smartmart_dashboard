@@ -18,10 +18,10 @@ class FakeCategoryRepository(CategoryRepository):
 
 def test_product_repository_interface_methods_exists():
     repo = FakeCategoryRepository()
-    
+
     category_by_name = repo.get_by_name("Smartphone")
     assert category_by_name is None
-    
+
     category_by_id = repo.get_by_id(1)
     assert category_by_id is None
 

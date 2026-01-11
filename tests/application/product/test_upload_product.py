@@ -1,7 +1,7 @@
 import pytest
 
-from api.domain.entities.product_entity import Product
 from api.application.use_cases.product.upload_product import UploadProductUseCase
+from api.domain.entities.product_entity import Product
 
 
 class FakeCategoryRepository:
@@ -40,7 +40,7 @@ def test_upload_product_success():
         description="Novo iPhone 14",
         price=999.99,
         category_id=1,
-        brand="Apple"
+        brand="Apple",
     )
 
     assert product.name == "iPhone 14"
@@ -60,7 +60,7 @@ def test_upload_product_category_not_exists():
             description="Novo Galaxy",
             price=899.99,
             category_id=999,
-            brand="Samsung"
+            brand="Samsung",
         )
 
     assert "does not exist" in str(exc.value)
@@ -77,7 +77,7 @@ def test_upload_product_duplicate_name():
         description="Google Pixel",
         price=599.99,
         category_id=1,
-        brand="Google"
+        brand="Google",
     )
 
     with pytest.raises(ValueError) as exc:
@@ -86,7 +86,7 @@ def test_upload_product_duplicate_name():
             description="Google Pixel",
             price=599.99,
             category_id=1,
-            brand="Google"
+            brand="Google",
         )
 
     assert "already exists" in str(exc.value)

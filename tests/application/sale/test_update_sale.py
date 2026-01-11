@@ -1,5 +1,6 @@
-from api.domain.entities.sale_entity import Sale
 from api.application.use_cases.sale.update_sale import UpdateSaleUseCase
+from api.domain.entities.sale_entity import Sale
+
 
 class FakeSaleRepository:
     def __init__(self):
@@ -10,7 +11,9 @@ class FakeSaleRepository:
         return sale
 
     def get_by_id(self, sale_id: int):
-        return Sale(id=sale_id, product_id=2, quantity=4, total_price=40.99, date="2026-01-11")
+        return Sale(
+            id=sale_id, product_id=2, quantity=4, total_price=40.99, date="2026-01-11"
+        )
 
     def list(self):
         return []

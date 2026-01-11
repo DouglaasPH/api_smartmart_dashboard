@@ -1,5 +1,6 @@
-from api.domain.entities.sale_entity import Sale
 from api.application.use_cases.sale.list_sales import ListSalesUseCase
+from api.domain.entities.sale_entity import Sale
+
 
 class FakeSaleRepository:
     def __init__(self):

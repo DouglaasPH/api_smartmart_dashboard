@@ -1,5 +1,5 @@
-from api.domain.entities.product_entity import Product
 from api.application.use_cases.product.list_product import ListProductUseCase
+from api.domain.entities.product_entity import Product
 
 
 class FakeProductRepository:
@@ -13,7 +13,13 @@ class FakeProductRepository:
     def get_by_name(self, product_name: str):
         return None
 
-    def list(self, name: str | None = None, price: float | None = None, category_id: int | None = None, brand: str | None = None,):
+    def list(
+        self,
+        name: str | None = None,
+        price: float | None = None,
+        category_id: int | None = None,
+        brand: str | None = None,
+    ):
         return []
 
 

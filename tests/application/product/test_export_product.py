@@ -1,18 +1,35 @@
 import csv
 from io import StringIO
 
-import pytest
 from django.http import HttpResponse
 
-from api.domain.entities.product_entity import Product
+import pytest
+
 from api.application.use_cases.product.export_product import ExportProductUseCase
+from api.domain.entities.product_entity import Product
+
 
 class FakeProductRepository:
     def list(self):
         return [
-            Product(id=1, name="iPhone 14", description="Celular", price=299.99, brand="Apple", category_id=1),
-            Product(id=2, name="Galaxy S22", description="Celular", price=199.99, brand="Samsung", category_id=1),
+            Product(
+                id=1,
+                name="iPhone 14",
+                description="Celular",
+                price=299.99,
+                brand="Apple",
+                category_id=1,
+            ),
+            Product(
+                id=2,
+                name="Galaxy S22",
+                description="Celular",
+                price=199.99,
+                brand="Samsung",
+                category_id=1,
+            ),
         ]
+
 
 @pytest.mark.django_db
 def test_export_product_usecase():
