@@ -28,7 +28,7 @@ class ExportProductUseCase:
                     product.description,
                     product.price,
                     product.brand,
-                    product.category_id,
+                    product.category["id"],
                 ]
             )
 
