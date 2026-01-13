@@ -48,7 +48,6 @@ class ProductView(APIView):
 
         try:
             products = use_case.execute(name, price, category_id, brand)
-            print(products)
         except ValueError as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 

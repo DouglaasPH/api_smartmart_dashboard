@@ -1,4 +1,4 @@
-from api.domain.entities.product_entity import Product
+from api.domain.entities.product_entity import Product, ProductForResponse
 from api.domain.repositories.product_repository import ProductRepository
 from api.infrastructure.database.models.products_model import Products
 
@@ -22,7 +22,7 @@ class DjangoProductRepository(ProductRepository):
         price: float | None = None,
         category_id: int | None = None,
         brand: str | None = None,
-    ) -> list[Product]:
+    ) -> list[ProductForResponse]:
         queryset = Products.objects.all()
 
         if name is not None:
@@ -36,12 +36,9 @@ class DjangoProductRepository(ProductRepository):
 
         if brand is not None:
             queryset = queryset.filter(brand=brand)
-            
-        for p in queryset:
-            print(p.category.name)
 
         return [
-            Product(
+            ProductForResponse(
                 id=p.id,
                 name=p.name,
                 description=p.description,
