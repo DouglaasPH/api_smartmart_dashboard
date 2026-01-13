@@ -36,6 +36,9 @@ class DjangoProductRepository(ProductRepository):
 
         if brand is not None:
             queryset = queryset.filter(brand=brand)
+            
+        for p in queryset:
+            print(p.category.name)
 
         return [
             Product(
@@ -43,7 +46,10 @@ class DjangoProductRepository(ProductRepository):
                 name=p.name,
                 description=p.description,
                 price=float(p.price),
-                category_id=p.category_id,
+                category={
+                    "id": p.category.id,
+                    "name": p.category.name
+                },
                 brand=p.brand,
             )
             for p in queryset

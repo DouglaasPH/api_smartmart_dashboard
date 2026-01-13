@@ -10,7 +10,7 @@ class Products(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     brand = models.CharField(max_length=100)
     category = models.ForeignKey(
-        Categories, on_delete=models.CASCADE, db_column="category_id"
+        Categories, on_delete=models.CASCADE
     )
 
     class Meta:

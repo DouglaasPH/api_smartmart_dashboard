@@ -7,5 +7,8 @@ class Product:
     name: str
     description: str
     price: float
-    category_id: int
+    category: {
+        id: int,
+        name: str
+    }
     brand: str
