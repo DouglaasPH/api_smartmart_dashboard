@@ -12,13 +12,16 @@ class Product:
 
 
 @dataclass
+class Category:
+    id: int
+    name: str
+
+
+@dataclass
 class ProductForResponse:
     id: int | None
     name: str
     description: str
     price: float
-    category: {
-        id: int,
-        name: str
-    }
+    category: Category
     brand: str

@@ -28,7 +28,7 @@ services:
       NAME_DB: smartmart
       USER_DB: root_smartmart
       PASSWORD_DB: rootpassword
-      HOST_DB: localhost
+      HOST_DB: smartmart_db
       PORT_DB: 5432
 
 volumes:
