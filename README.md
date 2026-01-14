@@ -216,7 +216,7 @@ A aplicação e o banco de dados rodam em containers separados, comunicando-se p
 | **POST** | `/products/import/` | Adicionar produtos por meio de um arquivo.csv                           |
 | **GET**  | `/sales/`           | Listar vendas                                                           |
 | **PUT**  | `/sales/<int:id>/`  | Alterar informações da venda com base no id da venda                    |
-| **PUT**  | `/sales/export/`    | Baixar arquivo.csv com todas as vendas que estão no banco de dados vend |
+| **GET**  | `/sales/export/`    | Baixar arquivo.csv com todas as vendas                                  |
 
 <br>
 
